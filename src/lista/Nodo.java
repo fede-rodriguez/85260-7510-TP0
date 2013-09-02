@@ -5,8 +5,13 @@ public class Nodo<TipoDato> {
 	private Nodo<TipoDato> siguiente;
 	private TipoDato dato;
 	
-	public Nodo(TipoDato dato){
+	public Nodo(TipoDato dato) {
 		this.dato = dato;
+		siguiente = null;
+	}
+	
+	public Nodo() {
+		siguiente = null;
 	}
 	
 	public Nodo<TipoDato> siguiente() {
