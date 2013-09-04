@@ -1,21 +1,16 @@
 package cola;
 
-public class Nodo {
+public abstract class Nodo {
 
 	protected Nodo siguiente;
 	protected Object dato;
-
+	
 	public Nodo() {
 		super();
 	}
 	
-	public Nodo(Object dato) {
-		this.dato = dato;
-		siguiente = new NodoNull();
-	}
-
 	public Nodo siguiente() {
-		return siguiente;
+		return this.siguiente;
 	}
 
 	public void setSiguiente(Nodo siguiente) {

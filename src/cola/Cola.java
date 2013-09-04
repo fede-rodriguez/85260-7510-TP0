@@ -22,7 +22,14 @@ public class Cola implements Queue{
 
 	@Override
 	public void add(Object item) {
-		getUltimoNodo().setSiguiente(new Nodo(item));
+		Nodo nuevo = new NodoConcreto(item);
+	
+		try {
+			getUltimoNodo().setSiguiente(nuevo);
+		} catch (AssertionError e) {
+			primerNodo = nuevo;
+		}
+		
 		tamanio++;
 	}
 
@@ -42,8 +49,8 @@ public class Cola implements Queue{
 		Nodo ultimoNodo = new NodoNull();
 		/* Recorro la lista hasta que lance una excepcion.*/
 		try {
-			ultimoNodo = nodo;
 			while (true) {
+				ultimoNodo = nodo;
 				nodo = nodo.getSiguiente();
 			}
 		} catch (AssertionError e) { /*Hacer nada*/ }

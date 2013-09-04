@@ -5,11 +5,11 @@ package cola;
  * Tipo de objeto Nodo que sobreescribe la funcionalidad para lanzar excepciones
  * Se utiliza para simbolizar el fin de la cola.
  */
-public class NodoNull extends Nodo {
+public class NodoNull extends Nodo{
 
 	public NodoNull() {
-		siguiente = null;
-		dato = null;
+		this.siguiente = null;
+		this.dato = null;
 	}
 	
 	@Override
