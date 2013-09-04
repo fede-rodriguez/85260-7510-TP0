@@ -3,10 +3,12 @@ package cola;
 
 public class Cola implements Queue{
 	private	Nodo primerNodo;
+	private Nodo ultimoNodo;
 	private int tamanio;
 	
 	public Cola() {
 		primerNodo = new NodoNull();
+		ultimoNodo = new NodoNull();
 		tamanio  = 0;
 	}
 
@@ -25,11 +27,12 @@ public class Cola implements Queue{
 		Nodo nuevo = new NodoConcreto(item);
 	
 		try {
-			getUltimoNodo().setSiguiente(nuevo);
+			ultimoNodo.setSiguiente(nuevo);
 		} catch (AssertionError e) {
 			primerNodo = nuevo;
 		}
 		
+		ultimoNodo = nuevo;
 		tamanio++;
 	}
 
@@ -43,19 +46,5 @@ public class Cola implements Queue{
 		primerNodo = primerNodo.getSiguiente();
 		tamanio--;
 	}
-	
-	private Nodo getUltimoNodo() {
-		Nodo nodo = primerNodo;
-		Nodo ultimoNodo = new NodoNull();
-		/* Recorro la lista hasta que lance una excepcion.*/
-		try {
-			while (true) {
-				ultimoNodo = nodo;
-				nodo = nodo.getSiguiente();
-			}
-		} catch (AssertionError e) { /*Hacer nada*/ }
-		/* Devuelvo el anterior al que lanzo la excepcion*/
-		return ultimoNodo;
-	}
-	
+
 }

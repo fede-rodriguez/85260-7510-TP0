@@ -1,7 +1,6 @@
 package tests;
 import static org.junit.Assert.*;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import cola.Cola;
@@ -10,7 +9,6 @@ import java.lang.String;
 public class ColaTests {
 	private Cola cola;
 	
-	@Ignore
 	@Test
 	public void isEmptyTest () {
 		cola = new Cola();
@@ -20,7 +18,6 @@ public class ColaTests {
 		assertFalse(cola.isEmpty());
 	}
 	
-	@Ignore
 	@Test
 	public void sizeTest() {
 		cola = new Cola();
@@ -66,6 +63,13 @@ public class ColaTests {
 		assertTrue(cola.top().equals(primerDato));
 		cola.remove();
 		assertTrue(cola.top().equals(segundoDato));
+		cola.remove();
+		assertTrue(cola.top().equals(tercerDato));
 	}
 	
+	@Test(expected=AssertionError.class)
+	public void topEmptyQueueTest() {
+		cola = new Cola();
+		cola.top();
+	}
 }
