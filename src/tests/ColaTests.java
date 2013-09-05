@@ -72,4 +72,10 @@ public class ColaTests {
 		cola = new Cola();
 		cola.top();
 	}
+	
+	@Test(expected=AssertionError.class)
+	public void removeEmptyQueueTest() {
+		cola = new Cola();
+		cola.remove();
+	}
 }

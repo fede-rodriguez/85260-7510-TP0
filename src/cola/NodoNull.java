@@ -2,7 +2,7 @@ package cola;
 
 
 /*
- * Tipo de objeto Nodo que sobreescribe la funcionalidad para lanzar excepciones
+ * Tipo de objeto NodoNull que sobreescribe la funcionalidad de Nodo para lanzar excepciones
  * Se utiliza para simbolizar el fin de la cola.
  */
 public class NodoNull extends Nodo{

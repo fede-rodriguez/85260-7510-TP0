@@ -26,6 +26,8 @@ public class Cola implements Queue{
 	public void add(Object item) {
 		Nodo nuevo = new NodoConcreto(item);
 	
+		/* Si setSiguiente lanza excepcion es porque es un NodoNull
+		 * o sea que la cola esta vacia, entonces se agrega al principio */
 		try {
 			ultimoNodo.setSiguiente(nuevo);
 		} catch (AssertionError e) {
